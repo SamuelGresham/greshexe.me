@@ -14,9 +14,9 @@ from pprint import pprint
 import requests
 
 data = {
-    'SECRET': "vggl6503tw2u7j0oqt13umpecn342p",
-    'CLIENT_ID': "mxfbx2vh2xmd2dug6xcoorgz1c0u5o",
-    "TOKEN": '8t73myer4kc5hcan3u1yb1opy71mcy'
+    'SECRET': "REMOVED",
+    'CLIENT_ID': "REMOVED",
+    "TOKEN": 'REMOVED'
 }
 
 twitch = Twitch(data["CLIENT_ID"], data["SECRET"])

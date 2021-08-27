@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'website/style.css' %}">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Samuel Gresham</title>
+</head>
+<body class="bd">
+    <div class='banner'>
+        <div class='container-fluid'>
+            <h3 class='logo-text'>Samuel Gresham</h3>
+            <button class='banner-button'>About Me</button>
+            <button class='banner-button'>My Projects</button>
+            <button class='banner-button' onclick="window.location.href = 'blog/'">Blog</button>
+        </div>  
+    </div>
+    <div class='bam'>
+        <h1 class='bam-text'>Samuel <br>Gresham </h1>
+
+        <p class='bam-paragraph'>Hey, I'm Sam. I'm a computer science student from Sydney, Australia. <br>
+        I'm passionate about making awesome things that put a smile on people's faces.</p>
+    </div>
+    <div class='pow'>
+        <h1 class='pow-text'>
+            My<br>Projects
+        </h1>
+        <p class='pow-paragraph'>
+            To find out about some of my current projects, head over to my projects page!<br>
+            Some of my past projects include games, utilities and even this website!
+        </p>
+    </div>
+    <div class='bam'>
+        <h1 class='bam-text'>My <br>Blog </h1>
+
+        <p class='bam-paragraph'>If (for some strange reason) you want to hear some of my ramblings about programming, music, and just life in general, head over to my blog!</p>
+    </div>
+</body>
+</html>

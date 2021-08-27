@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'website/style.css' %}">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class='banner'>
+        <div class='container-fluid'>
+            <h3 class='logo-text'>Samuel Gresham</h3>
+            <button class='banner-button'>About Me</button>
+            <button class='banner-button'>My Projects</button>
+            <button class='banner-button nav-here' onclick="window.location.href = '..'">Blog</button>
+        </div>  
+    </div>
+    <div class='content'>
+        <div class='heading'>
+        <h1>{{article.title_text}}</h1>
+        <i>{{article.subtitle_text}}</i> <br>
+        <b>Posted on {{article.pub_date}}</b>
+        </div>
+        <div class='article-body'>
+            <p>{{article.content_text | safe}}</p>
+        </div>
+        <div class='next'>
+            <h1 class='subheading' style='color: white'>Recent Blog Articles:</h1> <br> 
+            <div class='container'>
+                <div class='row container'>
+                    <div class='col article-box' onclick='window.location = "{{article1.pk}}"'>
+                        <div class='box-title-container'>
+                            <div class='box-subtitle-text'><b>{{ article1.title_text }}</b></div>
+                        </div>
+                        <div class='box-sub-container'>
+                            <i>{{ article1.subtitle_text }}</i>
+                        </div>
+                        <div class='box-img-container'>
+                            <img class='box-img' src='{{article1.img_url}}'>
+                        </div>
+                    </div>
+                    <div class='col article-box' onclick='window.location = "{{article2.pk}}"'>
+                        <div class='box-title-container'>
+                            <div class='box-subtitle-text'><b>{{ article2.title_text }}</b></div>
+                        </div>
+                        <div class='box-sub-container'>
+                            <i>{{ article2.subtitle_text }}</i>
+                        </div>
+                        <div class='box-img-container'>
+                            <img class='box-img' src='{{article2.img_url}}'>
+                        </div>
+                    </div>
+                    <div class='col article-box' onclick='window.location = "{{article3.pk}}"'>
+                        <div class='box-title-container'>
+                            <div class='box-subtitle-text'><b>{{ article3.title_text }}</b></div>
+                        </div>
+                        <div class='box-sub-container'>
+                            <i>{{ article3.subtitle_text }}</i>
+                        </div>
+                        <div class='box-img-container'>
+                            <img class='box-img' src='{{article3.img_url}}'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='btm'>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

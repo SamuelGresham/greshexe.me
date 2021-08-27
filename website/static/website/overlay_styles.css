@@ -1,0 +1,17 @@
+.lower-banner {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: consolas;
+    font-size: 20pt;
+}
+
+.banner-content {
+    padding: .2rem;
+    margin: 2px;
+    margin-left: 20px
+}

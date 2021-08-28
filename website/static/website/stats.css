@@ -1,0 +1,17 @@
+.box {
+    background-color: #93B5C6;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    
+}
+
+.bd {
+    width: 25%;
+    margin: 0 auto
+}
+
+.row, .container {
+    margin: 0
+}

@@ -1,3 +1,4 @@
+from django.db import reset_queries
 from django.http.response import HttpResponseBadRequest, HttpResponseForbidden
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
@@ -12,6 +13,8 @@ from twitchAPI.twitch import Twitch
 from twitchAPI.webhook import TwitchWebHook
 from pprint import pprint
 import requests
+from .forms import NameForm
+import json
 
 data = {
     'SECRET': "vggl6503tw2u7j0oqt13umpecn342p",
@@ -276,3 +279,20 @@ def greshbot_stats_page (request):
     }
 
     return render(request, 'website/stats.html', context)
+
+def greshbot_search_stats_page (request):
+
+    search_term = request.POST.get("search_name", "")
+    print(request.body)
+    try:
+        user = TwitchUser.objects.get(name_text = search_term)
+        user_data = {
+            user.user_id,
+            user.chat_count,
+            user.name_text
+        }
+        print(user_data)
+        return HttpResponse(user_data)
+    except TwitchUser.DoesNotExist:
+        return HttpResponse("They dont exist bro")
+

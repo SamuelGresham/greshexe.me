@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'website/stats.css' %}">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Greshbot Stats</title>
 </head>
 <body>
-    1. {{chatter1}} <br>
-    2. {{chatter2}} <br>
-    3. {{chatter3}} <br>
-    4. {{chatter4}} <br>
-    5. {{chatter5}} <br>
+    <div class='bd'>
+        <h3 style='text-align: center;'>Greshbot Dashboard</h3>
+        <br>
+        <div class='row container'>
+            <div class='col-sm box'>
+                <b>Top Chatters in the Last Hour</b> <br>
+                1. {{chatter1}} <br>
+                2. {{chatter2}} <br>
+                3. {{chatter3}} <br>
+                4. {{chatter4}} <br>
+                5. {{chatter5}} <br>
+            </div>
 
-    1. {{atchatter1}} <br>
-    2. {{atchatter2}} <br>
-    3. {{atchatter3}} <br>
-    4. {{atchatter4}} <br>
-    5. {{atchatter5}} <br>
+            <div class='col-sm box'>
+                <b>Top Chatters of All Time</b> <br>
+                1. {{atchatter1}} <br>
+                2. {{atchatter2}} <br>
+                3. {{atchatter3}} <br>
+                4. {{atchatter4}} <br>
+                5. {{atchatter5}} <br>
+            </div>
+        </div>
+        <div class='row-container'>
+            <h4>Search for a Chatter:</h4>
+            <form action="search/" method='post'>
+                <input type='text' placeholder="Username" name="search_name"> <input type='submit' value='Submit'>Search</button>
+            </form> 
+        </div>
+    </div>
 </body>
 </html>

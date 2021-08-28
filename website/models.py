@@ -31,3 +31,4 @@ class Project(models.Model):
     name_text = models.TextField(primary_key = True)
     description_text = models.TextField()
     technologies_text = models.TextField()
+    repo_link = models.CharField(max_length=100, default="")

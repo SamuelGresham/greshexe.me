@@ -119,6 +119,9 @@ def process_api_call(request):
             return greshbot_fetch_project(request)
         elif (request_type == "fetch_leaderboard"):
             return HttpResponse("1. " + str(greshbot_fetch_leaderboard()[0]) + " 2. " + str(greshbot_fetch_leaderboard()[1]) + " 3. " + str(greshbot_fetch_leaderboard()[2]))
+        elif (request_type == "fetch_repo"):
+            print("Helllo :)")
+            return greshbot_fetch_repo(request)
         else:
             return HttpResponseBadRequest("Request type invalid.")
     else:
@@ -240,6 +243,22 @@ def overlay_view(request):
     }
 
     return render(request, 'website/overlay.html', context)
+
+def greshbot_fetch_repo (request):
+    print("HELLO")
+    project_name = request.POST.get("name", "")
+
+    if (not project_name):
+        return HttpResponseBadRequest("Missing values")
+
+    try:
+        project_obj = Project.objects.get(pk = project_name)
+    except TwitchUser.DoesNotExist: 
+        return HttpResponse("Whoops, something isn't configured right. Gresh!!!")
+
+    print(f'Returned {project_obj.repo_link}')
+    return HttpResponse(project_obj.repo_link)
+
 
 def greshbot_stats_page (request):
     context = {

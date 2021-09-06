@@ -17,9 +17,9 @@ from .forms import NameForm
 import json
 
 data = {
-    'SECRET': "REMOVED",
-    'CLIENT_ID': "REMOVED",
-    "TOKEN": 'REMOVED'
+    'SECRET': "vggl6503tw2u7j0oqt13umpecn342p",
+    'CLIENT_ID': "mxfbx2vh2xmd2dug6xcoorgz1c0u5o",
+    "TOKEN": 'token'
 }
 
 twitch = Twitch(data["CLIENT_ID"], data["SECRET"])
